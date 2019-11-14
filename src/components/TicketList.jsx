@@ -1,38 +1,39 @@
-import React from "react";
-import Ticket from "./Ticket";
+import React from 'react';
+import Ticket from './Ticket';
 
 var masterTicketList = [
   {
     names: 'Thato and Haley',
-    location: '3A',
-    issue: 'Firebase won\'t save record. Halp.'
+    location: '3a',
+    issue: 'Firebase'
   },
   {
-    names: 'Sleater and Kinney',
-    location: '4B',
-    issue: 'Fox image not displaying on page, can only see duck?'
+    names: 'Haley Joel',
+    location: '6d',
+    issue: 'Dead People Vision'
   },
   {
-    names: 'Imani & Jacob',
-    location: '9F',
-    issue: 'Donkey picture not displaying on hover in Zoology app. :('
+    names: 'Haley Joel',
+    location: '1a',
+    issue: 'Bruce Willis wont leave me alone'
   }
 ];
 
-function TicketList(){
+
+function TicketList() {
   return (
     <div>
-      <hr/>
-      //Adding a "key prop" and seting it to "index"
+      <hr />
       {masterTicketList.map((ticket, index) =>
-        <Ticket names={ticket.names}
+        <Ticket
+          names={ticket.names}
           location={ticket.location}
           issue={ticket.issue}
-          key={index}/>
+          key={index}
+        />
       )}
     </div>
-);
+  );
+}
 
 export default TicketList;
-
-//This component will render the list of tickets in the queue. Each ticket will be represented by yet another React component.

@@ -1,20 +1,19 @@
-import React from "react";
-import Header from "./Header";
-import TicketList from "./TicketList"; //so that we can render our TicketList within the parent App component.
+import React from 'react';
+import Header from './Header';
+import TicketList from './TicketList';
+import { Switch, Route } from 'react-router-dom';
+import NewTicketForm from './NewTicketForm';
 
-
-function App(){
+function App() {
   return (
     <div>
-      <Header/>
-      <TicketList/>
+      <Header />
+      <Switch>
+        <Route exact path='/' component={TicketList} />
+        <Route path='/newticket' component={NewTicketForm} />
+      </Switch>
     </div>
   );
 }
 
 export default App;
-
-
-// export default App;
-
-//, we can only render a single React element at a time, but that element may contain limitless children. So anytime we want to render multiple elements we need to enclose them in a single parent,
